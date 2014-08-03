@@ -1,0 +1,12 @@
+{
+    "name": "static-dev-environment",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "grunt": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-sass": "latest",
+        "grunt-contrib-jade": "latest",
+        "grunt-contrib-connect": "latest"
+    }
+}

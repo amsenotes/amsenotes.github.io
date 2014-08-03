@@ -1,0 +1,20 @@
+.notes-container(ng-show='showNotes')
+    .home-link(ng-click='homePage()') home
+    .about-link(ng-click='aboutPage()') about
+    #notes-title notes
+    #notes-tabs
+        ul(class='tabs')
+            li(class='tab', ng-repeat='subject in subjects', ng-click='clickTab(subject)', data-selected='{{currentTab==subject}}')
+                | {{subject}}
+        div(class='note-tab', ng-repeat='subject in subjects', ng-show='currentTab==subject')
+            table
+                tr(ng-repeat='note in notes[subject]')
+                    td(class='file-type')
+                        i(class='fa {{note.typeIcon}}')
+                    td(class='file-name') {{note.name}}
+                    td(class='file-download')
+                        a(href='{{note.download}}')
+                            i(class='fa fa-download')
+                    td(class='file-view')
+                        a(href='{{note.view}}')
+                            i(class='fa fa-search-plus')
