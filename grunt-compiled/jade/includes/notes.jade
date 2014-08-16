@@ -1,9 +1,9 @@
-.notes-container(ng-show='showNotes')
-    .home-link(ng-click='homePage()') home
-    .about-link(ng-click='aboutPage()') about
-    #notes-title notes
+.container(ng-show='showNotes')
+    .left-link(ng-click='homePage()') home
+    .right-link(ng-click='aboutPage()') about
+    .title notes
     #notes-tabs
-        ul(class='tabs')
+        ul(class='tabs cf')
             li(class='tab', ng-repeat='subject in subjects', ng-click='clickTab(subject)', data-selected='{{currentTab==subject}}')
                 | {{subject}}
         div(class='note-tab', ng-repeat='subject in subjects', ng-show='currentTab==subject')
