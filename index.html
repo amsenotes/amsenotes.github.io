@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="amsenotes">
   <head>
-    <title>amsenotes</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans|Montserrat:400,700">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>amsenotes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
   </head>
   <body ng-controller="NotesCtrl">
     <div ng-show="showHome" class="home-container">
       <div id="site-title">amsenotes</div>
       <nav><a ng-click="notesPage()">notes</a>&nbsp;&#124;&nbsp;<a ng-click="aboutPage()">about</a></nav>
     </div>
-    <div ng-show="showNotes" class="notes-container">
-      <div ng-click="homePage()" class="home-link">home</div>
-      <div ng-click="aboutPage()" class="about-link">about</div>
-      <div id="notes-title">notes</div>
+    <div ng-show="showNotes" class="container">
+      <div ng-click="homePage()" class="left-link">home</div>
+      <div ng-click="aboutPage()" class="right-link">about</div>
+      <div class="title">notes</div>
       <div id="notes-tabs">
-        <ul class="tabs">
+        <ul class="tabs cf">
           <li ng-repeat="subject in subjects" ng-click="clickTab(subject)" data-selected="{{currentTab==subject}}" class="tab">{{subject}}</li>
         </ul>
         <div ng-repeat="subject in subjects" ng-show="currentTab==subject" class="note-tab">
@@ -30,10 +34,10 @@
         </div>
       </div>
     </div>
-    <div ng-show="showAbout" class="about-container cf">
-      <div ng-click="homePage()" class="home-link">home</div>
-      <div ng-click="aboutPage()" class="notes-link">notes</div>
-      <div id="about-title">about</div>
+    <div ng-show="showAbout" class="container cf">
+      <div ng-click="homePage()" class="left-link">home</div>
+      <div ng-click="aboutPage()" class="right-link">notes</div>
+      <div class="title">about</div>
       <div class="col">
         <div class="col-title">about us</div>The Academy for Math, Science, Engineering Note database. The idea of this website is to compile notes over the years and allow future Academy students to access them when they need to do so.<br><br>Please contact site owner, Keshav Sota, at <a href="mailto:krsota@gmail.com">krsota@gmail.com</a> if interested in order to add or criticize the notes. Any comments would be appreciated.<br><br>&copy; Keshav Sota 2015
       </div>
@@ -41,7 +45,5 @@
         <div class="col-title">disclaimer</div>I, the creator, do not take any responsibilities for any misprints on this document. It is at the discretion of the user to utilize this resource as a method for studying for tests.  Please do not blame the creator of this study guide for any questions incorrectly answered. Any reproduction of content of this website IS considered plagiarism and violates academic codes.
       </div>
     </div>
-    <script src="js/angular.min.js"></script>
-    <script src="js/app.js"></script>
   </body>
 </html>
